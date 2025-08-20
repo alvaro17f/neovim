@@ -13,7 +13,7 @@ vim.g.tests = require("utils.flags").get_flags("tests") or false
 vim.g.theme = require("utils.flags").get_flags("theme") or false
 ------------------------------------
 vim.o.autochdir = true
-vim.o.autocomplete = true
+vim.o.autocomplete = false
 vim.o.autoread = true
 vim.o.backup = false
 vim.o.breakindent = true
