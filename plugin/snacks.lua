@@ -1,8 +1,12 @@
 vim.pack.add({ "https://github.com/folke/snacks.nvim" }, { load = true, confirm = false })
 
 local Snacks = require("snacks")
+local utils = require("utils")
 
-local opts = require("utils.snacks").get_config()
+local snacks_path = vim.fn.stdpath("config") .. "/lua/plugins/snacks/"
+
+local opts = utils.get_config(snacks_path)
+
 Snacks.setup(opts)
 
-require("utils.snacks").load_keymaps()
+utils.load_keymaps(snacks_path)

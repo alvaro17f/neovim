@@ -1,9 +1,17 @@
 local M = {}
 
-local snacks_path = vim.fn.stdpath("config") .. "/lua/plugins/snacks/"
+M.deep_merge = function(target, source)
+	for k, v in pairs(source) do
+		if type(v) == "table" and type(target[k]) == "table" then
+			M.deep_merge(target[k], v)
+		else
+			target[k] = v
+		end
+	end
+end
 
 local function load_module_files(path, process_fn)
-	local modules_path = path or snacks_path
+	local modules_path = path or debug.getinfo(2, "S").source:sub(2):match("(.*/)")
 	local success, files = pcall(vim.fn.readdir, modules_path)
 	if not success then
 		return
@@ -27,9 +35,7 @@ function M.get_config(path)
 	local modules = {}
 	load_module_files(path, function(module_result)
 		if module_result.config then
-			for k, v in pairs(module_result.config) do
-				modules[k] = v
-			end
+			M.deep_merge(modules, module_result.config)
 		end
 	end)
 	return modules
