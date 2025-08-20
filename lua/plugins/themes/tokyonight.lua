@@ -1,4 +1,7 @@
-vim.pack.add({ "https://github.com/folke/tokyonight.nvim" }, { load = true, confirm = false })
+vim.pack.add(
+	{ { src = "https://github.com/folke/tokyonight.nvim", name = "tokyonight" } },
+	{ load = true, confirm = false }
+)
 
 require("tokyonight").setup({
 	style = "moon",

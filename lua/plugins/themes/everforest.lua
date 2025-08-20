@@ -1,4 +1,7 @@
-vim.pack.add({ "https://github.com/neanias/everforest-nvim" }, { load = true, confirm = false })
+vim.pack.add(
+	{ { src = "https://github.com/neanias/everforest-nvim", name = "everforest" } },
+	{ load = true, confirm = false }
+)
 
 require("everforest").setup({
 	background = "hard", -- "soft", "medium" or "hard"

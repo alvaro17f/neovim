@@ -1,4 +1,7 @@
-vim.pack.add({ "https://github.com/olimorris/onedarkpro.nvim" }, { load = true, confirm = false })
+vim.pack.add(
+	{ { src = "https://github.com/olimorris/onedarkpro.nvim", name = "onedarkpro" } },
+	{ load = true, confirm = false }
+)
 
 require("onedarkpro").setup({
 	options = {

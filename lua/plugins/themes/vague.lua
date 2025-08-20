@@ -1,4 +1,4 @@
-vim.pack.add({ "https://github.com/vague2k/vague.nvim" }, { load = true, confirm = false })
+vim.pack.add({ { src = "https://github.com/vague2k/vague.nvim", name = "vague" } }, { load = true, confirm = false })
 
 require("vague").setup({ transparent = true })
 vim.cmd("colorscheme vague")

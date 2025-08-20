@@ -1,5 +1,5 @@
 -- https://github.com/catppuccin/nvim#configuration
-vim.pack.add({ "https://github.com/catppuccin/nvim" }, { load = true, confirm = false })
+vim.pack.add({{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }, { load = true, confirm = false })
 
 require("catppuccin").setup({
 	flavour = "mocha",
