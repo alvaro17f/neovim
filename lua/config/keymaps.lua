@@ -6,8 +6,10 @@ local keymap = vim.keymap.set
 -- QUIT
 keymap("n", "ZQ", "<CMD>quitall!<CR>", { noremap = true, silent = true, desc = "Quit all" })
 
--- LAZY
-keymap("n", "<leader>.", "<CMD>Lazy sync<CR>", { noremap = true, silent = true, desc = "Lazy sync" })
+-- UPDATE
+keymap("n", "<leader>.", function()
+	require("utils").update_plugins()
+end, { noremap = true, silent = true, desc = "Update plugins" })
 
 -- FLAGS
 keymap("n", "<leader>F", "<CMD>Flags<CR>", { noremap = true, silent = true, desc = "Flags" })

@@ -56,7 +56,7 @@ M.config = {
 					key = "<leader>.",
 					desc = " Update",
 					action = function()
-						require("utils.core").update_plugins()
+						require("utils").update_plugins()
 					end,
 				},
 				{ icon = " ", key = "q", desc = " Quit", action = "<CMD>qa<CR>" },

@@ -1,6 +1,6 @@
 local M = {}
 
-M.deep_merge = function(target, source)
+function M.deep_merge(target, source)
 	for k, v in pairs(source) do
 		if type(v) == "table" and type(target[k]) == "table" then
 			M.deep_merge(target[k], v)
@@ -43,6 +43,19 @@ end
 
 function M.load_keymaps(path)
 	load_module_files(path, function(_) end)
+end
+
+function M.update_plugins()
+	vim.notify("Updating plugins...", vim.log.levels.INFO)
+	vim.cmd("messages clear")
+	local all_plugins = vim.pack.get()
+	vim.pack.update(all_plugins[#all_plugins + 1], { force = true })
+	vim.cmd("messages")
+end
+
+function M.require_safe(module)
+	local ok, result = pcall(require, module)
+	return ok and result or nil
 end
 
 return M
