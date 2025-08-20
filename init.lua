@@ -18,6 +18,7 @@ vim.g.loaded_rrhelper = 1
 vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_matchit = 1
 
+require("config.flags")
 require("config.autocmd")
 require("config.options")
 require("config.keymaps")

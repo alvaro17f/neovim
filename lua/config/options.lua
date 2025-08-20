@@ -4,13 +4,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = vim.g.mapleader
 ------------------------------------
--- vim.g.ai = require("utils.flags").get_flags("ai") or false
--- vim.g.debugger = require("utils.flags").get_flags("debugger") or false
--- vim.g.explorer = require("utils.flags").get_flags("explorer") or false
--- vim.g.logo = require("utils.flags").get_flags("logo") or "neovim"
--- vim.g.suggestions = require("utils.flags").get_flags("suggestions") or false
--- vim.g.tests = require("utils.flags").get_flags("tests") or false
--- vim.g.theme = require("utils.flags").get_flags("theme") or false
+vim.g.ai = require("utils.flags").get_flags("ai") or false
+vim.g.debugger = require("utils.flags").get_flags("debugger") or false
+vim.g.explorer = require("utils.flags").get_flags("explorer") or false
+vim.g.logo = require("utils.flags").get_flags("logo") or "neovim"
+vim.g.suggestions = require("utils.flags").get_flags("suggestions") or false
+vim.g.tests = require("utils.flags").get_flags("tests") or false
+vim.g.theme = require("utils.flags").get_flags("theme") or false
 ------------------------------------
 vim.o.autochdir = true
 vim.o.autocomplete = true
