@@ -1,16 +1,16 @@
 vim.pack.add({ "https://github.com/NickvanDyke/opencode.nvim" }, { load = true, confirm = false })
 
 require("opencode").setup({
-	provider_id = "openrouter",
-	model_id = vim.env.OPENROUTER_MODEL,
-	port = nil,
-	auto_reload = true,
-	terminal = {
-		win = {
-			enter = true,
-			position = "right",
-		},
-	},
+  provider_id = "openrouter",
+  model_id = vim.env.OPENROUTER_MODEL,
+  port = nil,
+  auto_reload = true,
+  terminal = {
+    win = {
+      enter = true,
+      position = "right",
+    },
+  },
 })
 
 -- stylua: ignore start

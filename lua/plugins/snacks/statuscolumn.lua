@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-	statuscolumn = { enabled = true },
+  statuscolumn = { enabled = true },
 }
 
 return M

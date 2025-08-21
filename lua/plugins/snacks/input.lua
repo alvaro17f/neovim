@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-	input = { enabled = true },
+  input = { enabled = true },
 }
 
 return M

@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-	quickfile = { enabled = true },
+  quickfile = { enabled = true },
 }
 
 return M

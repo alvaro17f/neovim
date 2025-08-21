@@ -56,6 +56,6 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.shortmess:append({ c = true })
 ------------------------------------
 vim.schedule(function()
-	vim.o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+  vim.o.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 end)
 ------------------------------------

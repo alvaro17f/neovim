@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-	debug = { enabled = true },
+  debug = { enabled = true },
 }
 
 return M

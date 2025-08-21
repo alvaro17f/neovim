@@ -1,5 +1,5 @@
 if vim.g.theme == false then
-	return {}
+  return {}
 end
 
 return { require("plugins.themes." .. vim.g.theme) }

@@ -1,17 +1,17 @@
 vim.pack.add({ "https://github.com/sindrets/diffview.nvim" }, { load = true, confirm = false })
 
 local function diffview_toggle()
-	local lib = require("diffview.lib")
-	local view = lib.get_current_view()
-	if view then
-		vim.cmd.DiffviewClose()
-	else
-		vim.cmd.DiffviewOpen()
-	end
+  local lib = require("diffview.lib")
+  local view = lib.get_current_view()
+  if view then
+    vim.cmd.DiffviewClose()
+  else
+    vim.cmd.DiffviewOpen()
+  end
 end
 
 vim.api.nvim_create_user_command("Ns", function()
-	vim.cmd([[
+  vim.cmd([[
 		execute 'vsplit | enew'
 		setlocal buftype=nofile
 		setlocal bufhidden=hide
@@ -20,18 +20,18 @@ vim.api.nvim_create_user_command("Ns", function()
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("ClipboardDiff", function()
-	local ftype = vim.api.nvim_eval("&filetype")
-	vim.cmd([[
+  local ftype = vim.api.nvim_eval("&filetype")
+  vim.cmd([[
 		tabnew %
 		Ns
 		normal! P
 		windo diffthis
 	]])
-	vim.cmd("set filetype=" .. ftype)
+  vim.cmd("set filetype=" .. ftype)
 end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("ClipboardDiffSelection", function()
-	vim.cmd([[
+  vim.cmd([[
 		normal! gv"zy
 		execute 'tabnew | setlocal buftype=nofile bufhidden=hide noswapfile'
 		normal! V"zp
@@ -40,8 +40,8 @@ vim.api.nvim_create_user_command("ClipboardDiffSelection", function()
 		windo diffthis
 	]])
 end, {
-	nargs = 0,
-	range = true,
+  nargs = 0,
+  range = true,
 })
 
 vim.keymap.set("n", "<leader>gh", "<CMD>DiffviewFileHistory<CR>", { desc = "File history" })
@@ -54,27 +54,27 @@ vim.keymap.set({ "v", "x" }, "<leader>gp", "<ESC><CMD>ClipboardDiffSelection<CR>
 local actions = require("diffview.actions")
 
 require("diffview").setup({
-	enhanced_diff_hl = true,
-	file_panel = {
-		listing_style = "list", -- 'list', 'tree'
-		tree_options = {
-			flatten_dirs = true,
-			folder_statuses = "only_folded", -- 'never', 'only_folded', 'always'.
-		},
-		win_config = {
-			position = "left",
-			width = 35,
-			win_opts = {},
-		},
-	},
-	hooks = {
-		view_opened = function()
-			local lib = require("diffview.lib")
-			if lib.get_current_view().class:name() == "DiffView" then
-				actions.toggle_files()
-			end
-		end,
-	},
+  enhanced_diff_hl = true,
+  file_panel = {
+    listing_style = "list", -- 'list', 'tree'
+    tree_options = {
+      flatten_dirs = true,
+      folder_statuses = "only_folded", -- 'never', 'only_folded', 'always'.
+    },
+    win_config = {
+      position = "left",
+      width = 35,
+      win_opts = {},
+    },
+  },
+  hooks = {
+    view_opened = function()
+      local lib = require("diffview.lib")
+      if lib.get_current_view().class:name() == "DiffView" then
+        actions.toggle_files()
+      end
+    end,
+  },
   --stylua: ignore
   keymaps = {
     disable_defaults = true,

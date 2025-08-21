@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-	image = {},
+  image = {},
 }
 
 return M

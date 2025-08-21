@@ -1,21 +1,21 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" }, { load = true, confirm = false })
 
 local LSP_TOOLS = {
-	"eslint_d",
-	"goimports",
-	"jsonlint",
-	"prettier",
-	"shellcheck",
-	"shfmt",
-	"sqruff",
-	"stylelint",
-	"stylua",
+  "eslint_d",
+  "goimports",
+  "jsonlint",
+  "prettier",
+  "shellcheck",
+  "shfmt",
+  "sqruff",
+  "stylelint",
+  "stylua",
 }
 
 local DEBUGGERS = {
-	"codelldb",
-	"delve",
-	"js-debug-adapter",
+  "codelldb",
+  "delve",
+  "js-debug-adapter",
 }
 
 local lsp_utils = require("utils.lsp")
