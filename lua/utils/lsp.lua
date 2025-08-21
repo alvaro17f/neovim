@@ -5,7 +5,7 @@ local get_lsp_servers = function()
 			and vim.tbl_map(function(file)
 				return vim.fn.stdpath("config") .. "/lsp/" .. file
 			end, vim.fn.readdir(vim.fn.stdpath("config") .. "/lsp"))
-		or vim.api.nvim_get_runtime_file("lsp/*.lua", true)
+		or vim.api.nvim_get_runtime_file("lsp/*", true)
 
 	return vim.iter(files)
 		:map(function(file)
