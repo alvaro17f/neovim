@@ -14,6 +14,7 @@ require("utils.flags").setup({
 		debugger = false,
 		explorer = { default = "yazi", options = explorers },
 		logo = { default = "neovim", options = logos },
+		mason = false,
 		suggestions = false,
 		tests = false,
 		theme = { default = "tokyonight", options = themes },
