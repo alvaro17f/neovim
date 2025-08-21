@@ -1,11 +1,11 @@
 ------------------------------------
 -- UNDOFILE ON GIT REPOSITORY ONLY
 ------------------------------------
--- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
---   callback = function()
---     vim.o.undofile = require("utils.git").is_git_repo()
---   end,
--- })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+	callback = function()
+		vim.o.undofile = require("utils.git").is_git_repo()
+	end,
+})
 
 ------------------------------------
 -- HIGHLIGHT ON YANK
@@ -17,6 +17,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 ------------------------------------
--- DEPENDENCIES
+-- WINBAR
 ------------------------------------
--- require("utils.dependencies").missing_dependencies_notification()
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = "*",
+	callback = function()
+		if vim.bo.filetype == "" then
+			return
+		end
+
+		vim.o.winbar = "%=" .. "%{%v:lua.require('utils.winbar').winbar_get_icon()%}" .. "  " .. "%F" .. " " .. "%m"
+	end,
+})

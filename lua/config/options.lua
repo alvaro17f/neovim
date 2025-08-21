@@ -49,7 +49,6 @@ vim.o.tabstop = 2
 vim.o.termguicolors = true
 vim.o.timeoutlen = 300
 vim.o.updatetime = 250
-vim.o.winbar = "%=" .. "%{%v:lua.require('utils.winbar').winbar_get_icon()%}" .. "  " .. "%F" .. " " .. "%m"
 vim.o.winborder = "rounded"
 vim.o.wrap = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
