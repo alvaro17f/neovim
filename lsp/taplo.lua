@@ -1,10 +1,10 @@
 return {
-  filetypes = { "toml" },
-  settings = {
-    evenBetterToml = {
-      formatter = {
-        inlineTableExpand = false,
-      },
-    },
-  },
+	filetypes = { "toml" },
+	settings = {
+		evenBetterToml = {
+			formatter = {
+				inlineTableExpand = false,
+			},
+		},
+	},
 }
