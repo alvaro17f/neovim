@@ -22,7 +22,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("BufWinEnter", {
   pattern = "*",
   callback = function()
-    if vim.bo.filetype == "" then
+    if
+      vim.bo.filetype == ""
+      or not vim.api.nvim_buf_is_loaded(0)
+      or vim.api.nvim_get_option_value("buftype", { buf = 0 }) ~= ""
+    then
       return
     end
 
