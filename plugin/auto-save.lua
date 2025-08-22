@@ -13,12 +13,9 @@ local EXCLUDED_FILETYPES = {
   "yazi",
 }
 
-local autosave_group = vim.api.nvim_create_augroup("autosave", {})
-
 local setup_autosave_autocmds = function()
   vim.api.nvim_create_autocmd("User", {
     pattern = "AutoSaveEnable",
-    group = autosave_group,
     callback = function(_)
       vim.notify("AutoSave enabled", vim.log.levels.INFO)
     end,
@@ -26,7 +23,6 @@ local setup_autosave_autocmds = function()
 
   vim.api.nvim_create_autocmd("User", {
     pattern = "AutoSaveDisable",
-    group = autosave_group,
     callback = function(_)
       vim.notify("AutoSave disabled", vim.log.levels.INFO)
     end,
@@ -70,7 +66,6 @@ require("auto-save").setup({
 
   vim.api.nvim_create_autocmd("User", {
     pattern = "AutoSaveWritePost",
-    group = autosave_group,
     callback = function(opts)
       if opts.data.saved_buffer ~= nil then
         print("󰄳 auto-save: saved at " .. vim.fn.strftime("%H:%M:%S"))

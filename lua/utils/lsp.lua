@@ -54,7 +54,6 @@ end
 
 function M.setup_keybindings()
   vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(event)
       local opts = { buffer = event.buf, silent = true }
 
