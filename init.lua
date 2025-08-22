@@ -1,4 +1,4 @@
-require("config.flags")
-require("config.autocmd")
-require("config.options")
-require("config.keymaps")
+require("core.flags")
+require("core.autocmd")
+require("core.options")
+require("core.keymaps")
