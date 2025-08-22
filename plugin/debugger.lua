@@ -36,9 +36,9 @@ end
 
 local utils = require("utils")
 
-local debugger_path = vim.fn.stdpath("config") .. "/lua/plugins/debugger/"
+local path = vim.fn.stdpath("config") .. "/lua/plugins/debugger/"
 
-utils.require_modules(debugger_path)
+utils.require_modules(path)
 
 ----------------------------
 -- vscode launch.json file
