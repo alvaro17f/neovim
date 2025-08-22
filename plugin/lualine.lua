@@ -37,7 +37,10 @@ lualine.setup({
           info = " ",
         },
       },
-      "filename",
+      {
+        "filename",
+        path = 3,
+      },
     },
     lualine_x = {
       {
