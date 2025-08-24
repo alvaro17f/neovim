@@ -46,11 +46,8 @@ function M.load_keymaps(path)
 end
 
 function M.update_plugins()
-  vim.notify("Updating plugins...", vim.log.levels.INFO)
-  vim.cmd("messages clear")
   local all_plugins = vim.pack.get()
   vim.pack.update(all_plugins[#all_plugins + 1], { force = true })
-  vim.cmd("messages")
 end
 
 function M.require_safe(module)
