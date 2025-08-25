@@ -1,7 +1,9 @@
 ------------------------------------
 -- UI
 ------------------------------------
-require("vim._extui").enable({
+local ui = require("vim._extui")
+
+ui.enable({
   enable = true,
   msg = {
     target = "msg",
