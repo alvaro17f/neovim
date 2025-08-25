@@ -1,7 +1,4 @@
 vim.pack.add({ "https://github.com/zbirenbaum/copilot.lua" }, { load = true, confirm = false })
--- cmd = "Copilot",
--- build = ":Copilot auth",
--- lazy = false,
 
 local copilot = require("copilot")
 local suggestion = require("copilot.suggestion")
