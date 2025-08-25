@@ -1,3 +1,6 @@
+------------------------------------
+-- NVIM
+------------------------------------
 require("core.ui")
 require("core.flags")
 require("core.autocmd")
