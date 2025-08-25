@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>g;", function()
   gitsigns.toggle_word_diff()
 end, { desc = "Preview hunk inline" })
 
-Utils.flags.vim.keymap.set("n", "[g", function()
+vim.keymap.set("n", "[g", function()
   gitsigns.nav_hunk("prev", { target = "all" })
 end, { desc = "Previous hunk" })
 
