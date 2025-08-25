@@ -43,7 +43,7 @@ vim.diagnostic.config({
 require("neotest").setup({
   adapters = {
     require("neotest-plenary"),
-    -- require("neotest-jest"), --TODO: uncomment when plugin fix deprecated vim.tbl_flatten
+    require("neotest-jest"),
     require("neotest-vitest"),
   },
   status = { virtual_text = true },
