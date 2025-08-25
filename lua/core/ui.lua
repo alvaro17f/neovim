@@ -7,7 +7,7 @@ ui.enable({
   enable = true,
   msg = {
     target = "msg",
-    timeout = 4000,
+    timeout = 1200,
   },
 })
 
