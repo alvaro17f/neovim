@@ -173,6 +173,10 @@ M.keymaps = {
   vim.keymap.set("n", "_", function()
     require("utils.snacks.scratch").select_scratch()
   end, { desc = "Select Scratch" }),
+
+  vim.keymap.set("n", "|", function()
+    Snacks.picker.lsp_symbols()
+  end, { desc = "Symbols" }),
 }
 
 return M
