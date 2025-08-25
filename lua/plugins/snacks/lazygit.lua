@@ -34,4 +34,12 @@ vim.keymap.set("n", "<leader>gl", function()
   end
 end, { desc = "Lazygit log" })
 
+vim.keymap.set("n", "<leader>gh", function()
+  if require("utils.git").is_git_repo() then
+    Snacks.lazygit.log_file()
+  else
+    print("You're not in a git repository")
+  end
+end, { desc = "Lazygit file history" })
+
 return M
