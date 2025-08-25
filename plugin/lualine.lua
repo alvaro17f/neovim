@@ -8,7 +8,7 @@ lualine.setup({
     theme = "auto", -- "auto", "horizon", "catppuccin"
     component_separators = "",
     section_separators = { left = "", right = "" },
-    globalstatus = false,
+    globalstatus = true,
     disabled_filetypes = {
       statusline = {
         "grug-far",
