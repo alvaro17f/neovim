@@ -10,6 +10,6 @@ vim.keymap.set("i", "<Tab>", function()
   if neocodeium.visible() then
     neocodeium.accept()
   else
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", true)
+    vim.api.nvim_feedkeys(vim.keycode("<Tab>"), "n", true)
   end
 end, { desc = "Neocodeium: accept suggestion" })

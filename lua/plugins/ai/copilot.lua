@@ -24,7 +24,7 @@ copilot.setup({
     if suggestion.is_visible() then
       suggestion.accept()
     else
-      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+      vim.api.nvim_feedkeys(vim.keycode("<Tab>"), "n", false)
     end
   end, { desc = "Copilot accept suggestion" }),
 
@@ -32,7 +32,7 @@ copilot.setup({
     if suggestion.is_visible() then
       suggestion.next()
     else
-      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+      vim.api.nvim_feedkeys(vim.keycode("<Tab>"), "n", false)
     end
   end, { desc = "Copilot next suggestion" }),
 })
